@@ -207,7 +207,7 @@ class xmpclient(ClientXMPP):
     '''
     Destroy account - deletes account
     Variables: n/a
-    BUG: Does not work. Just stays in an infinite loop.'''
+    BUG: Works, but refuses to exit afterwards.'''
     resp = self.Iq()
     resp['type'] = 'set'
     resp['from'] = self.boundjid.jid
