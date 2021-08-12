@@ -60,4 +60,4 @@ slixmpp==1.7.1
 
 ## Video
 
-Coming soon (TM)
+https://youtu.be/d0Pv0xLBtZg
