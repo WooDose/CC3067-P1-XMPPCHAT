@@ -4,9 +4,7 @@ from slixmpp.xmlstream.asyncio import asyncio
 from threading import Thread
 from blessedmenu import menu
 import logging
-import sys
 import os
-import uuid
 import blessed
 
 #Blessed!
@@ -100,7 +98,7 @@ class xmpclient(ClientXMPP):
       msg: message to be sent (recipient is determined from set contact)
       BUG: Again, sometimes takes up to five minutes, sometimes crashes.
       '''
-      self.send_message(mto=self.params['recipient'], mbody=msg, msubject='normal message', mfrom=self.boundjid)
+      self.send_message(mto=self.params['recipient'][0], mbody=msg, msubject='normal message', mfrom=self.boundjid)
 
   
   def set_contact(self, recipient):
@@ -216,8 +214,8 @@ class xmpclient(ClientXMPP):
     resp['register'] = ' '
     resp['register']['remove'] = ' '
     try:
-      await resp.send()
-      print('')
+      await resp.send(timeout=1)
+      self.terminate()
     except IqError:
       print(UITerminal.bold_red('Unable to delete account'))
     except IqTimeout:

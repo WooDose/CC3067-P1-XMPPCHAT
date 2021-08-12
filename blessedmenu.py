@@ -41,7 +41,7 @@ def menu(functions):
   OPTIONS_SHOWN = False
   while True:
     # Expect input
-    message = input(UITerminal.move(UITerminal.height - 1, 0) + ':')
+    message = input(UITerminal.move(UITerminal.height - 1, 0) + '>')
     # Handle commands
     if message.startswith('/'):
       command = message.strip().split()[0][1:]
