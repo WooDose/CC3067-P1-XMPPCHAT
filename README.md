@@ -2,6 +2,7 @@
 CLI-Based chat program using XMPP made on Python.
 
 Server running on Openfire.
+**Nota: El cliente se probo unicamente en un servidor local. La configuracion se dejo todo en default. **
 
 ## Requirements
 ```
